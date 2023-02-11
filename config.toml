@@ -109,7 +109,7 @@ version = "0.0"
 url_latest_version = "http://forthecrown.net/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/google/docsy-example"
+github_repo = "https://github.com/ForTheCrown/Website"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/ForTheCrown/FTC"
 
@@ -118,7 +118,7 @@ github_project_repo = "https://github.com/ForTheCrown/FTC"
 
 # Uncomment this if your GitHub repo does not have "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
-# github_branch= "master"
+github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "d72aa9b2712488cc3"
