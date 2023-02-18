@@ -4,7 +4,7 @@ These files are used to create the static pages of www.forthecrown.net.
 
 To generate the static files, I use [Hugo](https://gohugo.io/). And to set something up quickly, I've picked a theme called [Docsy](https://www.docsy.dev/).
 
-Once the static pages are generated, they can be uploaded to [this public repository](https://github.com/ForTheWout/ForTheWout.github.io). 
+Once the static pages are generated, they can be uploaded to [this public repository](https://github.com/ForTheCrown/forthecrown.github.io). 
 This repo uses Github as a webhost, mainly because it's free. [Here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) you can find more info if want to know more about how that works.  
 The website itself can be updated by changing the files in that public repository that hosts the page. 
 
