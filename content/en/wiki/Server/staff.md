@@ -60,11 +60,12 @@ Players with this role have extra perms in-game, such as:
 - And more.
   
 
-### Table of players
+<!-- ### Table of players
 
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | <div style="width:200px">Tasks</div> |
 | ------ | ---- | ----- |
 | / | / | / |
+-->
 
 <br>
 
@@ -76,8 +77,6 @@ Players with this role have extra perms in-game, such as:
 This role is not official. Players earn it by helping the server out in various ways but are not part of the staff team.
 
 Players with this role do not have any extra perms in-game.
-
-<br>
 
 ### Table of players
 
