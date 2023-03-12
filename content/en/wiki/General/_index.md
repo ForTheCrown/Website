@@ -1,10 +1,10 @@
 ---
-title: "Server"
-linkTitle: "Server"
+title: "General"
+linkTitle: "General"
 type: docs
-weight: 0
+weight: 1
 description: >
-  Learn more about the server.
+  Learn more about the server in general.
 ---
 
 {{% pageinfo %}}

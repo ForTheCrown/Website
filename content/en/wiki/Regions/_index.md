@@ -2,7 +2,7 @@
 title: "Region Poles"
 linkTitle: "Region Poles"
 type: docs
-weight: 4
+weight: 5
 description: >
   Learn how to create, use and move regions poles.
 ---
