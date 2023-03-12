@@ -74,7 +74,13 @@ Players with this role have extra perms in-game, such as:
 - Ignoring player claims,
 - And more.
   
+<<<<<<< HEAD:content/en/wiki/General/server_team.md
 <!--
+=======
+
+<!-- ### Table of players
+
+>>>>>>> 903046676036ccd058a74c2da054d4f1eef81856:content/en/wiki/Server/staff.md
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | <div style="width:200px">Tasks</div> |
 | ------ | ---- | ----- |
 | / | / | / |
@@ -91,7 +97,11 @@ This role is not official. Players earn it by helping the server out in various 
 
 Players with this role do not have any extra perms in-game.
 
+<<<<<<< HEAD:content/en/wiki/General/server_team.md
 <br>
+=======
+### Table of players
+>>>>>>> 903046676036ccd058a74c2da054d4f1eef81856:content/en/wiki/Server/staff.md
 
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | <div style="width:200px">Tasks</div> |
 | ------ | ---- | ----- |
