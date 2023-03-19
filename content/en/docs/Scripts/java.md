@@ -10,29 +10,63 @@ description: >
 The JavaScript engine used by FTC (Nashorn) is completely compatible with Java.
 {{% /pageinfo %}}
 
-The JavaScript engine used by FTC (Nashorn) is completely compatible 
-with Java.
-  
-To this end, you can import java classes like almost just like you would
-in regular Java, for example, to import the [Time utility class](https://github.com/ForTheCrown/FTC/blob/main/src/main/java/net/forthecrown/utils/Time.java), you can use the following:
+This means you can import java classes, instantiate them, or use their static
+methods like you would normally in Java.
+
+## Importing java classes
+In this example, we'll import the `java.lang.System` class to print something
+to the console:
 ```js
-import "@ftc.utils.Time";
+import "java.lang.System";
+System.out.println("Hello, world!");
 ```
-The `@ftc` is an 'import placeholder', basically used to make import 
-statements shorter and less of a hassel to write. All import 
-placeholders are defined in [`import_placeholders.toml`](https://github.com/ForTheCrown/FTC/blob/main/src/main/resources/scripts/import_placeholders.toml)  
-  
-If you're encountering issues with the above shown method, you can 
-fallback to Nashorn's actual method of importing classes:
+We can also give an alias to our imports like so:
 ```js
-const Time = Java.type("net.forthecrown.utils.Time");
+import * as AliasedSystem from "java.lang.System";
+AliasedSystem.out.println("Hello, aliased world!");
 ```
-FYI, the method of using the 'import' keyword, is just remapped to the second method
-by a preprocessor, thus, in effect, the 2 above methods are essentially the same
+### Import placeholders
+Import placeholders are a little tool to make writing import statements less of
+a hassel. All placeholders are defined in [`import_placeholders.toml`](https://github.com/ForTheCrown/FTC/blob/main/src/main/resources/scripts/import_placeholders.toml).
   
-Please also be aware that the Nashorn engine, is not 100% up to ECMAscript 6 standards,
-there are many missing features. Be careful when using newer JavaScript features such as
-classes, as they do not exist within the engine.
+As an example, we'll import the same java system class, but with imports
+```js
+import "@jlang.System";
+System.out.println("Hello, placeholder-ed world!");
+```
+## Importing other scripts
+While Nashsorn does not support CommonJS modules... or modules at all, FTC's
+scripts do allow for you to import other scripts using the following technique:
+```js
+// Imports and compiles the script
+import "path/to/script.js";
+// Evaluates the script's global scope
+script(); 
+
+script.a_method();
+```
+The same aliased import statement also works for these imports:
+```js
+import * as aliasedScript from "script/path.js";
+aliasedScript()
+
+aliasedScript.method();
+```
+**Note**: These import statements are very limited, you cannot import specific
+methods from individual scripts like with `import { m_1, m_2 } from "foo/bar.js"`.
+
+###### Praying that some day Java will have JavaScript engine that isn't 9 years behind
+
+### Behind the scenes
+Behind the scenes, both of the above-shown imports are ran through a JS Preprocessor that translates those import statements to JS code. For example, the following import `import "@ftc.core.Worlds";` is translated into `const Worlds = Java.type("net.forthecrown.core.Worlds");`.
+  
+Script imports are translated from `import "path/to/script.js"` to `const script = compile("path/to/script.js");`
+  
+Using the `as` keyword in imports simply changes the name of the `const` value
+  
+So, if you're having problems with using import statements, feel free to 
+fallback to those method calls. Be aware, neither of those 2 methods support the
+import placeholders however.
 
 ## Built in
 The script engine comes with several custom built in parts, the 
