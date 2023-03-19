@@ -25,3 +25,4 @@ Here is a place to store ideas of what would be cool to have on the website.
 - Add a community section to highlight builds made on server.
 - Make a page for guilds on the server, like `/g discover` in-game.
 - Make homepage background scroll through images of the server instead of being static.
+- Patch notes section to publish the small changes we make that aren't big enough for a discord announcement of their own
