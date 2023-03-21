@@ -1,3 +1,12 @@
+---
+title: "Commands"
+linkTitle: "Commands"
+type: docs
+weight: 5
+description: >
+  Learn what commands FTC has, and how to use them
+---
+
 # Syntax
 The notation format used to write these command documentations
 is similar to [vanilla Minecraft syntax](https://minecraft.fandom.com/wiki/Commands#:~:text=Command%20guide-,Syntax,-In%20Java%20Edition).  
