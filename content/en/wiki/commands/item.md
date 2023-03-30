@@ -8,21 +8,111 @@ description: >
 ---
 
 # Table of Contents
-- [itemname](#net_forthecrown_commands_item_ItemNameNode)
-- [items](#net_forthecrown_commands_item_ItemModCommands$ItemStacksCommand)
-- [enchant](#net_forthecrown_commands_item_EnchantmentNode)
-- [lore](#net_forthecrown_commands_item_ItemLoreNode)
-- [item_data](#net_forthecrown_commands_item_ItemDataNode)
-- [item_attribute_modifiers](#net_forthecrown_commands_item_ItemAttributeNode)
-- [item_cooldown](#net_forthecrown_commands_item_ItemCooldownNode)
+- [/enchant](#commands_item_EnchantmentNode)
+- [/item_attribute_modifiers](#commands_item_ItemAttributeNode)
+- [/item_cooldown](#commands_item_ItemCooldownNode)
+- [/item_data](#commands_item_ItemDataNode)
+- [/itemname](#commands_item_ItemNameNode)
+- [/items](#commands_item_ItemModCommands$ItemStacksCommand)
+- [/lore](#commands_item_ItemLoreNode)
 
 # Commands
-# /itemname <a name="net_forthecrown_commands_item_ItemNameNode"></a>
+## /enchant <a name="commands_item_EnchantmentNode"></a>
 An FTC command (default description)  
   
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/enchant <enchantment> [<level: number(1..)>]
+# Applies the <enchantment> to your held item
+# with [level]. If [level] is not given, then
+# a level of 1 is used.
+# If the item is a book, enchanting it turns it
+# into an enchanted book
+
+/enchant clear
+# Clears all your held item's enchantments
+```
+
+## /item_attribute_modifiers <a name="commands_item_ItemAttributeNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/item_attribute_modifiers clear
+# Clears the item's Attribute Modifiers
+
+/item_attribute_modifiers remove <attribute>
+# Removes all modifiers which modify the
+# <attribute> value
+
+/item_attribute_modifiers remove attr <attribute>
+# Same as above
+
+/item_attribute_modifiers remove slot <equipment slot>
+# Removes all modifiers which apply to the
+# <equipment slot>
+```
+
+## /item_cooldown <a name="commands_item_ItemCooldownNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+Aliases: `itemcooldown`  
+### Usages
+```yaml
+/item_cooldown <material>
+# Shows how long a <material> is on cooldown for you
+
+/item_cooldown <material> <time>
+# Sets your <material>'s cooldown to <time>
+```
+
+## /item_data <a name="commands_item_ItemDataNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+Aliases: `item_tags`, `itemnbt`, `itemdata`, `itemtags`  
+### Usages
+```yaml
+/item_data
+# Displays the Item data
+
+/item_data view [<path: nbt path>]
+# Displays Item data, if [path] is set, shows only
+# data at that path
+# Note: the <tag> and <path> roots are the item's raw NBT
+# Not the 'tag' element.
+
+/item_data insert <path: nbt path> <tag>
+# Inserts a <tag> into Item data at a <path>
+# Note: the <tag> and <path> roots are the item's raw NBT
+# Not the 'tag' element.
+
+/item_data merge <tag>
+# Merges a <tag> into Item data
+# Note: the <tag> and <path> roots are the item's raw NBT
+# Not the 'tag' element.
+
+/item_data set <tag>
+# Completely overwrites the existing Item data
+# and sets it to <tag>
+# Note: the <tag> and <path> roots are the item's raw NBT
+# Not the 'tag' element.
+```
+
+## /itemname <a name="commands_item_ItemNameNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
 Permission: `ftc.admin`  
 Aliases: `nameitem`, `renameitem`, `itemrename`  
-## Usages
+### Usages
 ```yaml
 /itemname <text>
 # Sets the name of the item you're holding
@@ -36,12 +126,13 @@ Aliases: `nameitem`, `renameitem`, `itemrename`
 # Clears the name of the item you're holding
 ```
 
-# /items <a name="net_forthecrown_commands_item_ItemModCommands$ItemStacksCommand"></a>
+## /items <a name="commands_item_ItemModCommands$ItemStacksCommand"></a>
 An FTC command (default description)  
   
+**Command metadata**:  
 Permission: `ftc.admin`  
 Aliases: `itemstacks`, `itemstack`, `item`  
-## Usages
+### Usages
 ```yaml
 /items enchant <enchantment> [<level: number(1..)>]
 # Applies the <enchantment> to your held item
@@ -130,29 +221,13 @@ Aliases: `itemstacks`, `itemstack`, `item`
 # Sets your <material>'s cooldown to <time>
 ```
 
-# /enchant <a name="net_forthecrown_commands_item_EnchantmentNode"></a>
+## /lore <a name="commands_item_ItemLoreNode"></a>
 An FTC command (default description)  
   
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/enchant <enchantment> [<level: number(1..)>]
-# Applies the <enchantment> to your held item
-# with [level]. If [level] is not given, then
-# a level of 1 is used.
-# If the item is a book, enchanting it turns it
-# into an enchanted book
-
-/enchant clear
-# Clears all your held item's enchantments
-```
-
-# /lore <a name="net_forthecrown_commands_item_ItemLoreNode"></a>
-An FTC command (default description)  
-  
+**Command metadata**:  
 Permission: `ftc.admin`  
 Aliases: `itemlore`, `lores`, `itemlores`  
-## Usages
+### Usages
 ```yaml
 /lore clear
 # Clears your held item's lore
@@ -175,76 +250,8 @@ Aliases: `itemlore`, `lores`, `itemlores`
 # Removes all lore between the 2 lines
 ```
 
-# /item_data <a name="net_forthecrown_commands_item_ItemDataNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-Aliases: `item_tags`, `itemnbt`, `itemdata`, `itemtags`  
-## Usages
-```yaml
-/item_data
-# Displays the Item data
-
-/item_data view [<path: nbt path>]
-# Displays Item data, if [path] is set, shows only
-# data at that path
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data insert <path: nbt path> <tag>
-# Inserts a <tag> into Item data at a <path>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data merge <tag>
-# Merges a <tag> into Item data
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data set <tag>
-# Completely overwrites the existing Item data
-# and sets it to <tag>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-```
-
-# /item_attribute_modifiers <a name="net_forthecrown_commands_item_ItemAttributeNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/item_attribute_modifiers clear
-# Clears the item's Attribute Modifiers
-
-/item_attribute_modifiers remove <attribute>
-# Removes all modifiers which modify the
-# <attribute> value
-
-/item_attribute_modifiers remove attr <attribute>
-# Same as above
-
-/item_attribute_modifiers remove slot <equipment slot>
-# Removes all modifiers which apply to the
-# <equipment slot>
-```
-
-# /item_cooldown <a name="net_forthecrown_commands_item_ItemCooldownNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-Aliases: `itemcooldown`  
-## Usages
-```yaml
-/item_cooldown <material>
-# Shows how long a <material> is on cooldown for you
-
-/item_cooldown <material> <time>
-# Sets your <material>'s cooldown to <time>
-```
-
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Tue Mar 21 15:10:51 EET 2023`  
-Plugin version: `1.19.4-1719-SNAPSHOT`  
+Date: `Thu Mar 30 22:08:46 CEST 2023`  
+Plugin version: `1.19.4-1733-RELEASE`  
 Total commands: 7

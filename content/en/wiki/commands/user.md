@@ -8,179 +8,22 @@ description: >
 ---
 
 # Table of Contents
-- [user_titles](#net_forthecrown_commands_user_UserTitlesNode)
-- [user_earnings](#net_forthecrown_commands_user_UserEarningsNode)
-- [user_timestamps](#net_forthecrown_commands_user_UserTimeNode)
-- [user_tab](#net_forthecrown_commands_user_UserTabNode)
-- [user_cosmetics](#net_forthecrown_commands_user_UserCosmeticsNode)
-- [user_alts](#net_forthecrown_commands_user_UserAltNode)
-- [ftcuser](#net_forthecrown_commands_user_UserCommands$UserCommand)
+- [/ftcuser](#commands_user_UserCommands$UserCommand)
+- [/user_alts](#commands_user_UserAltNode)
+- [/user_cosmetics](#commands_user_UserCosmeticsNode)
+- [/user_earnings](#commands_user_UserEarningsNode)
+- [/user_tab](#commands_user_UserTabNode)
+- [/user_timestamps](#commands_user_UserTimeNode)
+- [/user_titles](#commands_user_UserTitlesNode)
 
 # Commands
-# /user_titles <a name="net_forthecrown_commands_user_UserTitlesNode"></a>
+## /ftcuser <a name="commands_user_UserCommands$UserCommand"></a>
 An FTC command (default description)  
   
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/user_titles <user>
-# Displays a user's active title,
-# available titles and tier
-
-/user_titles <user> tier
-# Shows a user's tier
-
-/user_titles <user> tier <tier>
-# Sets the user's tiers
-
-/user_titles <user> title
-# Show's a user's active title
-
-/user_titles <user> title <title>
-# Sets a user's active title
-
-/user_titles <user> available_titles
-# Lists a user's available titles
-
-/user_titles <user> available_titles add <title list>
-# Adds all titles to a user
-
-/user_titles <user> available_titles remove <title list>
-# Removes all titles from a user
-```
-
-# /user_earnings <a name="net_forthecrown_commands_user_UserEarningsNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-Aliases: `userearnings`  
-## Usages
-```yaml
-/user_earnings <user> auto_sell
-# Lists a user's auto sell materials
-
-/user_earnings <user> auto_sell clear
-# Clears a user's auto sell materials list
-
-/user_earnings <user> auto_sell add <material>
-# Adds a material to a user's auto sell list
-
-/user_earnings <user> auto_sell remove <material>
-# Removes a material from a user's auto sell list
-
-/user_earnings <user> earned
-# Lists how many Rhines a user has earned
-# from every material they've sold
-
-/user_earnings <user> earned clear
-# Clears all the user's earnings data
-
-/user_earnings <user> earned set <material> <amount: number>
-# Sets the <amount> the user has earned
-# from the <material>
-
-/user_earnings <user> earned add <material> <amount: number(1..)>
-# Adds <amount> to the earned amount
-
-/user_earnings <user> earned remove <material> <amount: number(1..)>
-# Removes <amount> from the earnings of
-# <material>
-```
-
-# /user_timestamps <a name="net_forthecrown_commands_user_UserTimeNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/user_timestamps <user>
-# Shows a user's time fields as
-# human-readable dates
-
-/user_timestamps <user> set <time field> <time stamp: number>
-# Sets the <time field> to the given <time stamp>
-# value, the <time stamp> is a UNIX millisecond
-# time stamp
-
-/user_timestamps <user> set <time field> -now
-# Sets the <time field> to the current
-# moment in time.
-
-/user_timestamps <user> unset <time field>
-# Resets the <time field> for a user
-```
-
-# /user_tab <a name="net_forthecrown_commands_user_UserTabNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/user_tab <user> <prefix | suffix | tabName>
-# Shows the current value
-
-/user_tab <user> <prefix | suffix | tabName> -clears
-# Clears the value
-
-/user_tab <user> <prefix | suffix | tabName> <text>
-# Sets the value
-```
-
-# /user_cosmetics <a name="net_forthecrown_commands_user_UserCosmeticsNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-Aliases: `user_effects`, `usercosmetics`, `usereffects`  
-## Usages
-```yaml
-/user_cosmetics <user> <effect type>
-# Shows a user's active and available <effect types>
-
-/user_cosmetics <user> <effect type> set <cosmetic>
-# Sets the user's active <effect type>
-
-/user_cosmetics <user> <effect type> unset
-# Clears the user's active <effect type> cosmetic
-
-/user_cosmetics <user> <effect type> clear
-# Clears the user's available
-# <effect type> cosmetics
-
-/user_cosmetics <user> <effect type> add <cosmetic>
-# Adds the <cosmetic> to the user's
-# cosmetic effect list
-
-/user_cosmetics <user> <effect type> remove <cosmetic>
-# Removes the <cosmetic> from the user's
-# available cosmetics list
-```
-
-# /user_alts <a name="net_forthecrown_commands_user_UserAltNode"></a>
-An FTC command (default description)  
-  
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/user_alts <user>
-# Lists a <user>'s alt accounts and main account,
-# if they have them
-
-/user_alts <user> add <alt>
-# Adds a <target> as an alt for a <user>
-
-/user_alts <user> remove <alt>
-# Removes a <target> as an alt for a <user>
-
-/user_alts <user> clear
-# Clears all alt accounts that belong to a <user>
-```
-
-# /ftcuser <a name="net_forthecrown_commands_user_UserCommands$UserCommand"></a>
-An FTC command (default description)  
-  
+**Command metadata**:  
 Permission: `ftc.admin`  
 Aliases: `users`, `user`  
-## Usages
+### Usages
 ```yaml
 /ftcuser <user> timestamps
 # Shows a user's time fields as
@@ -297,8 +140,172 @@ Aliases: `users`, `user`
 # Clears all alt accounts that belong to a <user>
 ```
 
+## /user_alts <a name="commands_user_UserAltNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/user_alts <user>
+# Lists a <user>'s alt accounts and main account,
+# if they have them
+
+/user_alts <user> add <alt>
+# Adds a <target> as an alt for a <user>
+
+/user_alts <user> remove <alt>
+# Removes a <target> as an alt for a <user>
+
+/user_alts <user> clear
+# Clears all alt accounts that belong to a <user>
+```
+
+## /user_cosmetics <a name="commands_user_UserCosmeticsNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+Aliases: `user_effects`, `usercosmetics`, `usereffects`  
+### Usages
+```yaml
+/user_cosmetics <user> <effect type>
+# Shows a user's active and available <effect types>
+
+/user_cosmetics <user> <effect type> set <cosmetic>
+# Sets the user's active <effect type>
+
+/user_cosmetics <user> <effect type> unset
+# Clears the user's active <effect type> cosmetic
+
+/user_cosmetics <user> <effect type> clear
+# Clears the user's available
+# <effect type> cosmetics
+
+/user_cosmetics <user> <effect type> add <cosmetic>
+# Adds the <cosmetic> to the user's
+# cosmetic effect list
+
+/user_cosmetics <user> <effect type> remove <cosmetic>
+# Removes the <cosmetic> from the user's
+# available cosmetics list
+```
+
+## /user_earnings <a name="commands_user_UserEarningsNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+Aliases: `userearnings`  
+### Usages
+```yaml
+/user_earnings <user> auto_sell
+# Lists a user's auto sell materials
+
+/user_earnings <user> auto_sell clear
+# Clears a user's auto sell materials list
+
+/user_earnings <user> auto_sell add <material>
+# Adds a material to a user's auto sell list
+
+/user_earnings <user> auto_sell remove <material>
+# Removes a material from a user's auto sell list
+
+/user_earnings <user> earned
+# Lists how many Rhines a user has earned
+# from every material they've sold
+
+/user_earnings <user> earned clear
+# Clears all the user's earnings data
+
+/user_earnings <user> earned set <material> <amount: number>
+# Sets the <amount> the user has earned
+# from the <material>
+
+/user_earnings <user> earned add <material> <amount: number(1..)>
+# Adds <amount> to the earned amount
+
+/user_earnings <user> earned remove <material> <amount: number(1..)>
+# Removes <amount> from the earnings of
+# <material>
+```
+
+## /user_tab <a name="commands_user_UserTabNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/user_tab <user> <prefix | suffix | tabName>
+# Shows the current value
+
+/user_tab <user> <prefix | suffix | tabName> -clears
+# Clears the value
+
+/user_tab <user> <prefix | suffix | tabName> <text>
+# Sets the value
+```
+
+## /user_timestamps <a name="commands_user_UserTimeNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/user_timestamps <user>
+# Shows a user's time fields as
+# human-readable dates
+
+/user_timestamps <user> set <time field> <time stamp: number>
+# Sets the <time field> to the given <time stamp>
+# value, the <time stamp> is a UNIX millisecond
+# time stamp
+
+/user_timestamps <user> set <time field> -now
+# Sets the <time field> to the current
+# moment in time.
+
+/user_timestamps <user> unset <time field>
+# Resets the <time field> for a user
+```
+
+## /user_titles <a name="commands_user_UserTitlesNode"></a>
+An FTC command (default description)  
+  
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
+```yaml
+/user_titles <user>
+# Displays a user's active title,
+# available titles and tier
+
+/user_titles <user> tier
+# Shows a user's tier
+
+/user_titles <user> tier <tier>
+# Sets the user's tiers
+
+/user_titles <user> title
+# Show's a user's active title
+
+/user_titles <user> title <title>
+# Sets a user's active title
+
+/user_titles <user> available_titles
+# Lists a user's available titles
+
+/user_titles <user> available_titles add <title list>
+# Adds all titles to a user
+
+/user_titles <user> available_titles remove <title list>
+# Removes all titles from a user
+```
+
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Tue Mar 21 15:10:51 EET 2023`  
-Plugin version: `1.19.4-1719-SNAPSHOT`  
+Date: `Thu Mar 30 22:08:46 CEST 2023`  
+Plugin version: `1.19.4-1733-RELEASE`  
 Total commands: 7

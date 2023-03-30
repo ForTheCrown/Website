@@ -8,30 +8,31 @@ description: >
 ---
 
 # Table of Contents
-- [ban](#net_forthecrown_commands_punish_PunishmentCommand)
-- [mute](#net_forthecrown_commands_punish_PunishmentCommand)
-- [unban](#net_forthecrown_commands_punish_PardonCommand)
-- [kick](#net_forthecrown_commands_punish_PunishmentCommand$CommandKick)
-- [ipban](#net_forthecrown_commands_punish_PunishmentCommand)
-- [notes](#net_forthecrown_commands_punish_CommandNotes)
-- [smite](#net_forthecrown_commands_punish_CommandSmite)
-- [jail](#net_forthecrown_commands_punish_CommandJail)
-- [seperate](#net_forthecrown_commands_punish_CommandSeparate)
-- [unbanip](#net_forthecrown_commands_punish_PardonCommand)
-- [punish](#net_forthecrown_commands_punish_CommandPunish)
-- [jails](#net_forthecrown_commands_punish_CommandJails)
-- [unsoftmute](#net_forthecrown_commands_punish_PardonCommand)
-- [unjail](#net_forthecrown_commands_punish_PardonCommand)
-- [unmute](#net_forthecrown_commands_punish_PardonCommand)
-- [softmute](#net_forthecrown_commands_punish_PunishmentCommand)
+- [/ban](#commands_punish_PunishmentCommand)
+- [/ipban](#commands_punish_PunishmentCommand)
+- [/jail](#commands_punish_CommandJail)
+- [/jails](#commands_punish_CommandJails)
+- [/kick](#commands_punish_PunishmentCommand$CommandKick)
+- [/mute](#commands_punish_PunishmentCommand)
+- [/notes](#commands_punish_CommandNotes)
+- [/punish](#commands_punish_CommandPunish)
+- [/seperate](#commands_punish_CommandSeparate)
+- [/smite](#commands_punish_CommandSmite)
+- [/softmute](#commands_punish_PunishmentCommand)
+- [/unban](#commands_punish_PardonCommand)
+- [/unbanip](#commands_punish_PardonCommand)
+- [/unjail](#commands_punish_PardonCommand)
+- [/unmute](#commands_punish_PardonCommand)
+- [/unsoftmute](#commands_punish_PardonCommand)
 
 # Commands
-# /ban <a name="net_forthecrown_commands_punish_PunishmentCommand"></a>
+## /ban <a name="commands_punish_PunishmentCommand"></a>
 Punishes a user with a Ban  
   
+**Command metadata**:  
 Permission: `ftc.punish.ban`  
 Aliases: `fban`, `banish`, `fbanish`  
-## Usages
+### Usages
 ```yaml
 /ban <user> [reason=<reason>] [length=<length: time>]
 # Punishes a user with a Ban
@@ -39,48 +40,13 @@ Aliases: `fban`, `banish`, `fbanish`
 # not end automatically
 ```
 
-# /mute <a name="net_forthecrown_commands_punish_PunishmentCommand"></a>
-Punishes a user with a Mute  
-  
-Permission: `ftc.punish.mute`  
-## Usages
-```yaml
-/mute <user> [reason=<reason>] [length=<length: time>]
-# Punishes a user with a Mute
-# If [length] is not set, the punishment will
-# not end automatically
-```
-
-# /unban <a name="net_forthecrown_commands_punish_PardonCommand"></a>
-Pardons a user, if they've been Banned  
-  
-Permission: `ftc.punish.ban`  
-Aliases: `pardon`, `pardonban`  
-## Usages
-```yaml
-/unban <user>
-# Pardons a <user>
-```
-
-# /kick <a name="net_forthecrown_commands_punish_PunishmentCommand$CommandKick"></a>
-Punishes a user with a Kick  
-  
-Permission: `ftc.punish.kick`  
-Aliases: `fkick`, `kickplayer`  
-## Usages
-```yaml
-/kick <user> [reason=<reason>] [length=<length: time>]
-# Punishes a user with a Kick
-# If [length] is not set, the punishment will
-# not end automatically
-```
-
-# /ipban <a name="net_forthecrown_commands_punish_PunishmentCommand"></a>
+## /ipban <a name="commands_punish_PunishmentCommand"></a>
 Punishes a user with a IpBan  
   
+**Command metadata**:  
 Permission: `ftc.punish.banip`  
 Aliases: `banip`, `fbanip`, `fipban`  
-## Usages
+### Usages
 ```yaml
 /ipban <user> [reason=<reason>] [length=<length: time>]
 # Punishes a user with a IpBan
@@ -88,11 +54,64 @@ Aliases: `banip`, `fbanip`, `fipban`
 # not end automatically
 ```
 
-# /notes <a name="net_forthecrown_commands_punish_CommandNotes"></a>
+## /jail <a name="commands_punish_CommandJail"></a>
+Jails a user  
+  
+**Command metadata**:  
+Permission: `ftc.punish.jail`  
+### Usages
+```yaml
+/jail <user> <jail> [length=<length: time>] [reason=<reason>]
+# Jails the <user> in the <jail>
+# If the [length] is not set, the user will
+# be jailed forever.
+```
+
+## /jails <a name="commands_punish_CommandJails"></a>
+Lists all jails  
+  
+**Command metadata**:  
+Permission: `ftc.punish.jail`  
+Aliases: `jaillist`, `listjails`  
+### Usages
+```yaml
+/jails
+# Lists all jails
+```
+
+## /kick <a name="commands_punish_PunishmentCommand$CommandKick"></a>
+Punishes a user with a Kick  
+  
+**Command metadata**:  
+Permission: `ftc.punish.kick`  
+Aliases: `fkick`, `kickplayer`  
+### Usages
+```yaml
+/kick <user> [reason=<reason>] [length=<length: time>]
+# Punishes a user with a Kick
+# If [length] is not set, the punishment will
+# not end automatically
+```
+
+## /mute <a name="commands_punish_PunishmentCommand"></a>
+Punishes a user with a Mute  
+  
+**Command metadata**:  
+Permission: `ftc.punish.mute`  
+### Usages
+```yaml
+/mute <user> [reason=<reason>] [length=<length: time>]
+# Punishes a user with a Mute
+# If [length] is not set, the punishment will
+# not end automatically
+```
+
+## /notes <a name="commands_punish_CommandNotes"></a>
 Shows all admin notes of a player  
   
+**Command metadata**:  
 Permission: `ftc.punish.notes`  
-## Usages
+### Usages
 ```yaml
 /notes <user>
 # Views a <user>'s staff notes
@@ -104,109 +123,46 @@ Permission: `ftc.punish.notes`
 # Removes a staff note from a <user>
 ```
 
-# /smite <a name="net_forthecrown_commands_punish_CommandSmite"></a>
-Smites a user lol. This command will deal damage  
-  
-Permission: `ftc.admin`  
-## Usages
-```yaml
-/smite <user>
-# Smites a <user>
-```
-
-# /jail <a name="net_forthecrown_commands_punish_CommandJail"></a>
-Jails a user  
-  
-Permission: `ftc.punish.jail`  
-## Usages
-```yaml
-/jail <user> <jail> [length=<length: time>] [reason=<reason>]
-# Jails the <user> in the <jail>
-# If the [length] is not set, the user will
-# be jailed forever.
-```
-
-# /seperate <a name="net_forthecrown_commands_punish_CommandSeparate"></a>
-Seperates/unseparates 2 players  
-  
-Permission: `ftc.punish.separate`  
-## Usages
-```yaml
-/seperate <user 1> <user 2>
-# Separates/unseparates 2 players
-```
-
-# /unbanip <a name="net_forthecrown_commands_punish_PardonCommand"></a>
-Pardons a user, if they've been IpBanned  
-  
-Permission: `ftc.punish.banip`  
-Aliases: `pardonip`, `ippardon`, `pardonipban`  
-## Usages
-```yaml
-/unbanip <user>
-# Pardons a <user>
-```
-
-# /punish <a name="net_forthecrown_commands_punish_CommandPunish"></a>
+## /punish <a name="commands_punish_CommandPunish"></a>
 Opens the punishment menu for a specific user  
   
+**Command metadata**:  
 Permission: `ftc.commands.punish`  
 Aliases: `p`  
-## Usages
+### Usages
 ```yaml
 /punish
 # Opens the punishment menu for a specific user
 ```
 
-# /jails <a name="net_forthecrown_commands_punish_CommandJails"></a>
-Lists all jails  
+## /seperate <a name="commands_punish_CommandSeparate"></a>
+Seperates/unseparates 2 players  
   
-Permission: `ftc.punish.jail`  
-Aliases: `jaillist`, `listjails`  
-## Usages
+**Command metadata**:  
+Permission: `ftc.punish.separate`  
+### Usages
 ```yaml
-/jails
-# Lists all jails
+/seperate <user 1> <user 2>
+# Separates/unseparates 2 players
 ```
 
-# /unsoftmute <a name="net_forthecrown_commands_punish_PardonCommand"></a>
-Pardons a user, if they've been SoftMuted  
+## /smite <a name="commands_punish_CommandSmite"></a>
+Smites a user lol. This command will deal damage  
   
-Permission: `ftc.punish.softmute`  
-Aliases: `pardonsoftmute`  
-## Usages
+**Command metadata**:  
+Permission: `ftc.admin`  
+### Usages
 ```yaml
-/unsoftmute <user>
-# Pardons a <user>
+/smite <user>
+# Smites a <user>
 ```
 
-# /unjail <a name="net_forthecrown_commands_punish_PardonCommand"></a>
-Pardons a user, if they've been Jailed  
-  
-Permission: `ftc.punish.jail`  
-Aliases: `pardonjail`  
-## Usages
-```yaml
-/unjail <user>
-# Pardons a <user>
-```
-
-# /unmute <a name="net_forthecrown_commands_punish_PardonCommand"></a>
-Pardons a user, if they've been Muted  
-  
-Permission: `ftc.punish.mute`  
-Aliases: `pardonmute`  
-## Usages
-```yaml
-/unmute <user>
-# Pardons a <user>
-```
-
-# /softmute <a name="net_forthecrown_commands_punish_PunishmentCommand"></a>
+## /softmute <a name="commands_punish_PunishmentCommand"></a>
 Punishes a user with a SoftMute  
   
+**Command metadata**:  
 Permission: `ftc.punish.softmute`  
-## Usages
+### Usages
 ```yaml
 /softmute <user> [reason=<reason>] [length=<length: time>]
 # Punishes a user with a SoftMute
@@ -214,8 +170,68 @@ Permission: `ftc.punish.softmute`
 # not end automatically
 ```
 
+## /unban <a name="commands_punish_PardonCommand"></a>
+Pardons a user, if they've been Banned  
+  
+**Command metadata**:  
+Permission: `ftc.punish.ban`  
+Aliases: `pardon`, `pardonban`  
+### Usages
+```yaml
+/unban <user>
+# Pardons a <user>
+```
+
+## /unbanip <a name="commands_punish_PardonCommand"></a>
+Pardons a user, if they've been IpBanned  
+  
+**Command metadata**:  
+Permission: `ftc.punish.banip`  
+Aliases: `pardonip`, `ippardon`, `pardonipban`  
+### Usages
+```yaml
+/unbanip <user>
+# Pardons a <user>
+```
+
+## /unjail <a name="commands_punish_PardonCommand"></a>
+Pardons a user, if they've been Jailed  
+  
+**Command metadata**:  
+Permission: `ftc.punish.jail`  
+Aliases: `pardonjail`  
+### Usages
+```yaml
+/unjail <user>
+# Pardons a <user>
+```
+
+## /unmute <a name="commands_punish_PardonCommand"></a>
+Pardons a user, if they've been Muted  
+  
+**Command metadata**:  
+Permission: `ftc.punish.mute`  
+Aliases: `pardonmute`  
+### Usages
+```yaml
+/unmute <user>
+# Pardons a <user>
+```
+
+## /unsoftmute <a name="commands_punish_PardonCommand"></a>
+Pardons a user, if they've been SoftMuted  
+  
+**Command metadata**:  
+Permission: `ftc.punish.softmute`  
+Aliases: `pardonsoftmute`  
+### Usages
+```yaml
+/unsoftmute <user>
+# Pardons a <user>
+```
+
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Tue Mar 21 15:10:51 EET 2023`  
-Plugin version: `1.19.4-1719-SNAPSHOT`  
+Date: `Thu Mar 30 22:08:46 CEST 2023`  
+Plugin version: `1.19.4-1733-RELEASE`  
 Total commands: 16

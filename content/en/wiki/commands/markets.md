@@ -8,123 +8,24 @@ description: >
 ---
 
 # Table of Contents
-- [unmerge](#net_forthecrown_commands_markets_CommandUnmerge)
-- [mergeshop](#net_forthecrown_commands_markets_CommandMergeShop)
-- [marketappeal](#net_forthecrown_commands_markets_CommandMarketAppeal)
-- [unclaimshop](#net_forthecrown_commands_markets_CommandUnclaimShop)
-- [marketevict](#net_forthecrown_commands_markets_CommandMarketWarning)
-- [shoptrust](#net_forthecrown_commands_markets_CommandShopTrust)
-- [marketediting](#net_forthecrown_commands_markets_CommandMarketEditing)
-- [transfershop](#net_forthecrown_commands_markets_CommandTransferShop)
-- [market](#net_forthecrown_commands_markets_CommandMarket)
+- [/market](#commands_markets_CommandMarket)
+- [/marketappeal](#commands_markets_CommandMarketAppeal)
+- [/marketediting](#commands_markets_CommandMarketEditing)
+- [/marketevict](#commands_markets_CommandMarketWarning)
+- [/mergeshop](#commands_markets_CommandMergeShop)
+- [/shoptrust](#commands_markets_CommandShopTrust)
+- [/transfershop](#commands_markets_CommandTransferShop)
+- [/unclaimshop](#commands_markets_CommandUnclaimShop)
+- [/unmerge](#commands_markets_CommandUnmerge)
 
 # Commands
-# /unmerge <a name="net_forthecrown_commands_markets_CommandUnmerge"></a>
-Unmerges the shop you own with the shop it's merged with  
-  
-Permission: `ftc.markets`  
-Aliases: `marketunmerge`, `shopunmerge`, `unmergeshop`, `unmergemarket`  
-## Usages
-```yaml
-/unmerge
-# Unmerges the shop you own with the shop it's merged with
-```
-
-# /mergeshop <a name="net_forthecrown_commands_markets_CommandMergeShop"></a>
-Request to merge your shop with someone else's  
-  
-Permission: `ftc.markets`  
-Aliases: `mergemarket`, `shopmerge`, `marketmerge`  
-## Usages
-```yaml
-/mergeshop <user>
-# Requests to merge your shop with a <user>'s shop
-
-/mergeshop <user> confirm
-# Confirms a merge request that came from a <user>
-
-/mergeshop <user> deny
-# Denies a merge request that came from a <user>
-
-/mergeshop <user> cancel
-# Cancels a merge request sent to a <user>
-```
-
-# /marketappeal <a name="net_forthecrown_commands_markets_CommandMarketAppeal"></a>
-Appeals an automated market eviction  
-  
-Permission: `ftc.markets`  
-## Usages
-```yaml
-/marketappeal
-# Appeals an automated market eviction
-```
-
-# /unclaimshop <a name="net_forthecrown_commands_markets_CommandUnclaimShop"></a>
-Makes you unclaim your shop in Hazelguard  
-  
-Permission: `ftc.markets`  
-Aliases: `unclaimmarket`  
-## Usages
-```yaml
-/unclaimshop
-# Makes you unclaim your shop in Hazelguard
-```
-
-# /marketevict <a name="net_forthecrown_commands_markets_CommandMarketWarning"></a>
-Issues/revokes a shop eviction  
-  
-Permission: `ftc.markets.warning`  
-Aliases: `shopevict`, `evictshop`, `evictmarket`  
-## Usages
-```yaml
-/marketevict <user | shop> <value> <time> <reason>
-# Starts a market eviction with <reason>.
-# The owner will be evicted after <time> has passed
-
-/marketevict <user | shop> <value> undo
-# Cancels a shop eviction
-```
-
-# /shoptrust <a name="net_forthecrown_commands_markets_CommandShopTrust"></a>
-Trusts/untrusts a player in your shop  
-  
-Permission: `ftc.markets`  
-Aliases: `shopuntrust`, `markettrust`, `marketuntrust`  
-## Usages
-```yaml
-/shoptrust <user>
-# Trusts/untrusts a <user>
-```
-
-# /marketediting <a name="net_forthecrown_commands_markets_CommandMarketEditing"></a>
-Allows/disallows shop members to edit sign shops in your shop  
-  
-Permission: `ftc.markets`  
-Aliases: `toggleshopediting`, `togglemarketediting`  
-## Usages
-```yaml
-/marketediting
-# Allows/disallows shop members to edit sign shops in your shop
-```
-
-# /transfershop <a name="net_forthecrown_commands_markets_CommandTransferShop"></a>
-Transfers a player's shop in Hazelguard to another player  
-  
-Permission: `ftc.markets`  
-Aliases: `transfermarket`, `shoptransfer`, `markettransfer`  
-## Usages
-```yaml
-/transfershop <user>
-# Transfers the shop you own to a <user>
-```
-
-# /market <a name="net_forthecrown_commands_markets_CommandMarket"></a>
+## /market <a name="commands_markets_CommandMarket"></a>
 General purpose commands to manage markets  
   
+**Command metadata**:  
 Permission: `ftc.admin`  
 Aliases: `markets`, `shops`  
-## Usages
+### Usages
 ```yaml
 /market refresh_all
 # Refreshes all existing shops
@@ -191,8 +92,116 @@ Aliases: `markets`, `shops`
 # Resets the shop
 ```
 
+## /marketappeal <a name="commands_markets_CommandMarketAppeal"></a>
+Appeals an automated market eviction  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+### Usages
+```yaml
+/marketappeal
+# Appeals an automated market eviction
+```
+
+## /marketediting <a name="commands_markets_CommandMarketEditing"></a>
+Allows/disallows shop members to edit sign shops in your shop  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `toggleshopediting`, `togglemarketediting`  
+### Usages
+```yaml
+/marketediting
+# Allows/disallows shop members to edit sign shops in your shop
+```
+
+## /marketevict <a name="commands_markets_CommandMarketWarning"></a>
+Issues/revokes a shop eviction  
+  
+**Command metadata**:  
+Permission: `ftc.markets.warning`  
+Aliases: `shopevict`, `evictshop`, `evictmarket`  
+### Usages
+```yaml
+/marketevict <user | shop> <value> <time> <reason>
+# Starts a market eviction with <reason>.
+# The owner will be evicted after <time> has passed
+
+/marketevict <user | shop> <value> undo
+# Cancels a shop eviction
+```
+
+## /mergeshop <a name="commands_markets_CommandMergeShop"></a>
+Request to merge your shop with someone else's  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `mergemarket`, `shopmerge`, `marketmerge`  
+### Usages
+```yaml
+/mergeshop <user>
+# Requests to merge your shop with a <user>'s shop
+
+/mergeshop <user> confirm
+# Confirms a merge request that came from a <user>
+
+/mergeshop <user> deny
+# Denies a merge request that came from a <user>
+
+/mergeshop <user> cancel
+# Cancels a merge request sent to a <user>
+```
+
+## /shoptrust <a name="commands_markets_CommandShopTrust"></a>
+Trusts/untrusts a player in your shop  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `shopuntrust`, `markettrust`, `marketuntrust`  
+### Usages
+```yaml
+/shoptrust <user>
+# Trusts/untrusts a <user>
+```
+
+## /transfershop <a name="commands_markets_CommandTransferShop"></a>
+Transfers a player's shop in Hazelguard to another player  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `transfermarket`, `shoptransfer`, `markettransfer`  
+### Usages
+```yaml
+/transfershop <user>
+# Transfers the shop you own to a <user>
+```
+
+## /unclaimshop <a name="commands_markets_CommandUnclaimShop"></a>
+Makes you unclaim your shop in Hazelguard  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `unclaimmarket`  
+### Usages
+```yaml
+/unclaimshop
+# Makes you unclaim your shop in Hazelguard
+```
+
+## /unmerge <a name="commands_markets_CommandUnmerge"></a>
+Unmerges the shop you own with the shop it's merged with  
+  
+**Command metadata**:  
+Permission: `ftc.markets`  
+Aliases: `marketunmerge`, `shopunmerge`, `unmergeshop`, `unmergemarket`  
+### Usages
+```yaml
+/unmerge
+# Unmerges the shop you own with the shop it's merged with
+```
+
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Tue Mar 21 15:10:51 EET 2023`  
-Plugin version: `1.19.4-1719-SNAPSHOT`  
+Date: `Thu Mar 30 22:08:46 CEST 2023`  
+Plugin version: `1.19.4-1733-RELEASE`  
 Total commands: 9
