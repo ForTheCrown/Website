@@ -2,7 +2,7 @@
 title: "Royal Sword"
 linkTitle: "Royal Sword"
 type: docs
-weight: 5
+weight: 6
 description: >
   Information about how Royal Swords work.
 ---

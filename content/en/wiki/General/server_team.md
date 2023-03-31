@@ -95,7 +95,7 @@ Players with this role do not have any extra perms in-game.
 
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | <div style="width:200px">Tasks</div> |
 | ------ | ---- | ----- |
-| PettatoGaming | Couple months in 2021<br>Mar 2023 | Player Events<br>Writing for Wiki
+| PettatoGaming | Mar 2023<br>Couple months in 2021 | Player Events<br>Writing for Wiki
 | Posh_D | Mar 2023 | Build and test game arenas
 | RavenSky123 | Mar 2023 | Help with Hazelguard guild
 | Tigsu (Retired) | Couple months in 2022 | Building
