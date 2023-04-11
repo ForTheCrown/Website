@@ -2,7 +2,7 @@
 title: "Menus"
 linkTitle: "Menus"
 type: docs
-weight: 1
+weight: 2
 description: >
   Get to know the guild menus.
 ---
