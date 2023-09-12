@@ -31,14 +31,14 @@ If you are interested in joining the staff team, we could use help in the follow
 
 # Owner
 
-This role is only assigned to Wout. In the past, co-ownership with JulieWoolie was attempted, but it mainly slowed down productivity.
+This role is only assigned to Wout. For a period between January and October in 2021, the server was owned by JulieWoolie
 
 The owner has to do some tasks such as: maintaining the webstore, server payments, maintaining server profile on vote websites, managing the staff team, the FTC website, Discord server and GitHub organisation, and so on. Any help in these areas is always welcome.
 
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | 
 | ------ | ---- |
 | Wout | Since 2019, except part of 2021
-| *JulieWoolie* | 2021 (co and solo)
+| JulieWoolie | 2021 (co and solo)
 
 <br>
 
