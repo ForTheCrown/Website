@@ -43,7 +43,7 @@ recover over time.
 The price decrease is based off how much you've earned from a single item.
 An item's price is calculated using a function which is defined as follows:
   
-$f\left(x\right)\ =\operatorname{ceil}\left(A\cdot\arctan\left(Bx-C\right)+D\right)$
+$f\left(x\right)\ =\text{ceil}\left(A\cdot\arctan\left(Bx-C\right)+D\right)$
 
 $m = 250000$ (Max you can earn from an item, may vary based on item)  
 $s = initalPrice$  
