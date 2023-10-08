@@ -2,7 +2,7 @@
 title: "Guilds"
 linkTitle: "Guilds"
 type: docs
-weight: 3
+weight: 4
 description: >
   Learn about all the features guilds have to offer.
 ---

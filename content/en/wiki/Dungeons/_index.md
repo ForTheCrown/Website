@@ -2,7 +2,7 @@
 title: "Dungeons"
 linkTitle: "Dungeons"
 type: docs
-weight: 2
+weight: 3
 description: >
   Here you can find all info related to the dungeons.
 ---

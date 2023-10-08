@@ -2,7 +2,7 @@
 title: "Commands"
 linkTitle: "Commands"
 type: docs
-weight: 5
+weight: 21
 description: >
   Learn what commands FTC has, and how to use them
 ---

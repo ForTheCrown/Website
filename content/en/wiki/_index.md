@@ -25,7 +25,7 @@ FTC is a semi-vanilla SMP server
 1. No hacking or using xray
 2. Be respectful to other players
 3. No spamming or advertising
-4. No unwated PvP
+4. No unwanted PvP
 5. No impersonating other players
 6. Only play on 1 account at a time
 7. No lag machines

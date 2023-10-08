@@ -4,6 +4,86 @@
 //.td-page-meta--issue { display: none !important; }
 .td-page-meta--project-issue { display: none !important; }
 
+// To reset site to default theme, start comment here
+.page_override {
+    color: #d0d0d0;
+    background-color: #2e303e;
+}
+
+.td-section {
+  @extend .page_override
+}
+
+.td-page {
+  @extend .page_override;
+}
+
+.td-sidebar-toc {
+    border-left: 0px #ffffff00;
+}
+
+.td-sidebar {
+    border-right: 0px #ffffff00;
+}
+.td-sidebar__search {
+    padding: 0px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.td-sidebar-nav {
+    max-height: calc(108vh - 10rem);
+    overflow-y: auto;
+}
+
+.breadcrumb-item active {
+    color:#d0d0d0
+}
+
+.btn-link.disabled {
+    color:#d0d0d0
+}
+
+.td-sidebar-nav .td-sidebar-link__page {
+    color: #d0d0d0;
+}
+
+.td-sidebar-nav .td-sidebar-link__page:hover {
+    color: #d0d0d0;
+    background-color: #ffffff30
+}
+
+.td-sidebar-nav .td-sidebar-link__section {
+    color: #d0d0d0;
+}
+.td-sidebar-nav .td-sidebar-link__section:hover {
+    color: #d0d0d0;
+    background-color: #ffffff30
+}
+
+.td-content table {
+    color: #d0d0d0;
+}
+
+.td-toc #TableOfContents a {
+    color: rgb(255, 255, 255);
+}
+.pageinfo {
+    background: #393b4b
+}
+
+.pre {
+
+}
+
+// AND end comment here, commenting this out will disable the dark theme
+
+.mini_screenshot {
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .screenshot {
     height: auto;
     border-radius: 8px;

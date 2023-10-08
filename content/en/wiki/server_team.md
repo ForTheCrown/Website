@@ -51,8 +51,9 @@ This role is given to staff members that have passed the test of time. The only 
 | <div style="width:150px">Player</div> | <div style="width:150px">Date</div> | <div style="width:200px">Tasks</div> |
 | ------ | ---- | ----- |
 | JulieWoolie | Since 2020 | Coding, Improving, Policing |
-| Robinoh | Since 2020 | Improving, Policing |
+| Robinoh | Since 2020 | Wiki, Improving, Policing |
 | Daphlipan | Since 2023 | Improving, Policing |
+| Oweeennnnn | Since 2023 | Wiki, Improving, Policing |
 
 <br>
 
