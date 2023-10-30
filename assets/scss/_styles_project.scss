@@ -7,7 +7,7 @@
 // To reset site to default theme, start comment here
 .page_override {
     color: #d0d0d0;
-    background-color: #2e303e;
+    background-color: #131416;
 }
 
 .td-section {
@@ -49,7 +49,7 @@
 
 .td-sidebar-nav .td-sidebar-link__page:hover {
     color: #d0d0d0;
-    background-color: #ffffff30
+    background-color: #131416
 }
 
 .td-sidebar-nav .td-sidebar-link__section {
@@ -57,7 +57,7 @@
 }
 .td-sidebar-nav .td-sidebar-link__section:hover {
     color: #d0d0d0;
-    background-color: #ffffff30
+    background-color: #131416
 }
 
 .td-content table {
@@ -68,11 +68,11 @@
     color: rgb(255, 255, 255);
 }
 .pageinfo {
-    background: #393b4b
+    background: #131416
 }
 
-.pre {
-
+code {
+    color: #d0d0d0;
 }
 
 // AND end comment here, commenting this out will disable the dark theme
