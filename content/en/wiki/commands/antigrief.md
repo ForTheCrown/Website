@@ -1,0 +1,178 @@
+---
+title: "antigrief"
+linkTitle: "antigrief"
+type: docs
+weight: 1
+description: >
+  antigrief commands
+---
+
+
+## /ban
+Punishes a user with a Ban  
+  
+**Permission**: `ftc.punish.ban`  
+**Aliases**: `fban`, `banish`, `fbanish`  
+**Uses**:
+- <pre class="command-usage-arguments">/ban &lt;user&gt; [reason=&lt;reason&gt;] [length=&lt;length: time&gt;]</pre>  
+  Punishes a user with a Ban  
+  If [length] is not set, the punishment will  
+  not end automatically  
+
+## /ipban
+Punishes a user with a IpBan  
+  
+**Permission**: `ftc.punish.banip`  
+**Aliases**: `banip`, `fbanip`, `fipban`  
+**Uses**:
+- <pre class="command-usage-arguments">/ipban &lt;user&gt; [reason=&lt;reason&gt;] [length=&lt;length: time&gt;]</pre>  
+  Punishes a user with a IpBan  
+  If [length] is not set, the punishment will  
+  not end automatically  
+
+## /jail
+Jails a user  
+  
+**Permission**: `ftc.punish.jail`  
+**Uses**:
+- <pre class="command-usage-arguments">/jail &lt;user&gt; &lt;jail&gt; [length=&lt;length: time&gt;] [reason=&lt;reason&gt;]</pre>  
+  Jails the user in the jail  
+  If the [length] is not set, the user will  
+  be jailed forever.  
+
+## /jails
+Lists all jails  
+  
+**Permission**: `ftc.punish.jail`  
+**Aliases**: `jaillist`, `listjails`  
+**Uses**:
+- <pre class="command-usage-arguments">/jails</pre>  
+  Lists all jails  
+
+## /kick
+Punishes a user with a Kick  
+  
+**Permission**: `ftc.punish.kick`  
+**Aliases**: `fkick`, `kickplayer`  
+**Uses**:
+- <pre class="command-usage-arguments">/kick &lt;user&gt; [reason=&lt;reason&gt;] [length=&lt;length: time&gt;]</pre>  
+  Punishes a user with a Kick  
+  If [length] is not set, the punishment will  
+  not end automatically  
+
+## /mute
+Punishes a user with a Mute  
+  
+**Permission**: `ftc.punish.mute`  
+**Uses**:
+- <pre class="command-usage-arguments">/mute &lt;user&gt; [reason=&lt;reason&gt;] [length=&lt;length: time&gt;]</pre>  
+  Punishes a user with a Mute  
+  If [length] is not set, the punishment will  
+  not end automatically  
+
+## /notes
+Shows all admin notes of a player  
+  
+**Permission**: `ftc.punish.notes`  
+**Uses**:
+- <pre class="command-usage-arguments">/notes &lt;user&gt;</pre>  
+  Views a user's staff notes  
+- <pre class="command-usage-arguments">/notes &lt;user&gt; add &lt;text&gt;</pre>  
+  Adds a staff note to a user  
+- <pre class="command-usage-arguments">/notes &lt;user&gt; remove &lt;index&gt;</pre>  
+  Removes a staff note from a user  
+
+## /punish
+Opens the punishment menu for a specific user  
+  
+**Permission**: `ftc.commands.Punish`  
+**Aliases**: `p`  
+**Uses**:
+- <pre class="command-usage-arguments">/punish</pre>  
+  Opens the punishment menu for a specific user  
+
+## /sc
+Sends a message to the staff chat  
+  
+**Permission**: `ftc.staffchat`  
+**Aliases**: `staffchat`  
+**Uses**:
+- <pre class="command-usage-arguments">/sc &lt;message&gt;</pre>  
+  Sends a message to the staff chat  
+
+## /seperate
+Seperates/unseparates 2 players  
+  
+**Permission**: `ftc.punish.separate`  
+**Uses**:
+- <pre class="command-usage-arguments">/seperate &lt;user 1&gt; &lt;user 2&gt;</pre>  
+  Separates/unseparates 2 players  
+
+## /smite
+Smites a user lol. This command will deal damage  
+  
+**Permission**: `ftc.admin`  
+**Uses**:
+- <pre class="command-usage-arguments">/smite &lt;user&gt;</pre>  
+  Smites a user  
+
+## /softmute
+Punishes a user with a SoftMute  
+  
+**Permission**: `ftc.punish.softmute`  
+**Uses**:
+- <pre class="command-usage-arguments">/softmute &lt;user&gt; [reason=&lt;reason&gt;] [length=&lt;length: time&gt;]</pre>  
+  Punishes a user with a SoftMute  
+  If [length] is not set, the punishment will  
+  not end automatically  
+
+## /unban
+Pardons a user, if they've been Banned  
+  
+**Permission**: `ftc.punish.ban`  
+**Aliases**: `pardonban`  
+**Uses**:
+- <pre class="command-usage-arguments">/unban &lt;user&gt;</pre>  
+  Pardons a user  
+
+## /unbanip
+Pardons a user, if they've been IpBanned  
+  
+**Permission**: `ftc.punish.banip`  
+**Aliases**: `pardonip`, `ippardon`, `pardonipban`  
+**Uses**:
+- <pre class="command-usage-arguments">/unbanip &lt;user&gt;</pre>  
+  Pardons a user  
+
+## /unjail
+Pardons a user, if they've been Jailed  
+  
+**Permission**: `ftc.punish.jail`  
+**Aliases**: `pardonjail`  
+**Uses**:
+- <pre class="command-usage-arguments">/unjail &lt;user&gt;</pre>  
+  Pardons a user  
+
+## /unmute
+Pardons a user, if they've been Muted  
+  
+**Permission**: `ftc.punish.mute`  
+**Aliases**: `pardonmute`  
+**Uses**:
+- <pre class="command-usage-arguments">/unmute &lt;user&gt;</pre>  
+  Pardons a user  
+
+## /unsoftmute
+Pardons a user, if they've been SoftMuted  
+  
+**Permission**: `ftc.punish.softmute`  
+**Aliases**: `pardonsoftmute`  
+**Uses**:
+- <pre class="command-usage-arguments">/unsoftmute &lt;user&gt;</pre>  
+  Pardons a user  
+
+# Metadata
+This is an auto-generated command documentation file generated by the FTC plugin.  
+Date: `Sat Nov 18 17:32:09 EET 2023`  
+Plugin version: `1.0.0-SNAPSHOT`  
+Total commands: 17

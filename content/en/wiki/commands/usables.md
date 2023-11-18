@@ -1,718 +1,774 @@
 ---
-title: "Usables"
-linkTitle: "Usables"
+title: "usables"
+linkTitle: "usables"
 type: docs
 weight: 1
 description: >
-  Usables Commands
+  usables commands
 ---
 
-# Table of Contents
-- [/area_triggers](#commands_usables_TriggerNode)
-- [/interactable](#commands_usables_InteractableCommands$CommandInteractable)
-- [/kit](#commands_usables_UseCmdCommand$KitCommand)
-- [/usable_block](#commands_usables_UsableBlockNode)
-- [/usable_entity](#commands_usables_UsableEntityNode)
-- [/warp](#commands_usables_UseCmdCommand$WarpCommand)
 
-# Commands
-## /area_triggers <a name="commands_usables_TriggerNode"></a>
+## /kit
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.usables`  
-Aliases: `usable_triggers`, `triggers`  
-### Usages
-```yaml
-/area_triggers -create <name>
-# Creates a trigger from your currently selected WorldEdit
-# selection (made with //wand, or with //pos1 and //pos2
+**Permission**: `ftc.kits`  
+**Aliases**: `kits`  
+**Uses**:
+- <pre class="command-usage-arguments">/kit</pre>  
+  Displays a list of Kits  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt;</pre>  
+  Uses a Kit  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/kit &lt;kit&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
-/area_triggers -create <name> <pos1: x,y,z> <pos2: x,y,z>
-# Creates a trigger from the area between <pos1> and <pos2>
-
-/area_triggers <trigger name> type
-# Shows a trigger's type
-
-/area_triggers <trigger name> type <type>
-# Sets a trigger's type to <type>
-
-/area_triggers <trigger name> set_area
-# Sets a trigger's area to your WorldEdit selection
-
-/area_triggers <trigger name> set_area <pos1: x,y,z> <pos2: x,y,z>
-# Sets a trigger's area to the specified 2 coordinates
-
-/area_triggers <trigger name> rename <name>
-# Renames a trigger to <name>
-
-/area_triggers <trigger name> remove
-# Removes the trigger
-
-/area_triggers <trigger name> info
-# Displays admin information about the trigger
-
-/area_triggers <trigger name> data
-# Displays the trigger data
-
-/area_triggers <trigger name> data view [<path: nbt path>]
-# Displays trigger data, if [path] is set, shows only
-# data at that path
-
-/area_triggers <trigger name> data insert <path: nbt path> <tag>
-# Inserts a <tag> into trigger data at a <path>
-
-/area_triggers <trigger name> data merge <tag>
-# Merges a <tag> into trigger data
-
-/area_triggers <trigger name> data set <tag>
-# Completely overwrites the existing trigger data
-# and sets it to <tag>
-
-/area_triggers <trigger name> actions
-# Lists all actions a trigger has
-
-/area_triggers <trigger name> actions clear
-# Clears all actions in a trigger
-
-/area_triggers <trigger name> actions add <action type> [<action value>]
-# Adds a <action type> to a trigger
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/area_triggers <trigger name> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a trigger's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/area_triggers <trigger name> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a trigger at an <index>
-
-/area_triggers <trigger name> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/area_triggers <trigger name> tests silent
-# Shows if the Usage checks of trigger will show fail messages
-
-/area_triggers <trigger name> tests silent <true | false>
-# Sets if trigger will show fail messages or not
-
-/area_triggers <trigger name> tests
-# Lists all tests a trigger has
-
-/area_triggers <trigger name> tests clear
-# Clears all tests in a trigger
-
-/area_triggers <trigger name> tests add <test type> [<test value>]
-# Adds a <test type> to a trigger
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/area_triggers <trigger name> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a trigger's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/area_triggers <trigger name> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a trigger at an <index>
-
-/area_triggers <trigger name> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
-
-## /interactable <a name="commands_usables_InteractableCommands$CommandInteractable"></a>
+## /usable
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `usable`  
-### Usages
-```yaml
-/interactable triggers -create <name>
-# Creates a trigger from your currently selected WorldEdit
-# selection (made with //wand, or with //pos1 and //pos2
-
-/interactable triggers -create <name> <pos1: x,y,z> <pos2: x,y,z>
-# Creates a trigger from the area between <pos1> and <pos2>
-
-/interactable triggers <trigger name> type
-# Shows a trigger's type
-
-/interactable triggers <trigger name> type <type>
-# Sets a trigger's type to <type>
-
-/interactable triggers <trigger name> set_area
-# Sets a trigger's area to your WorldEdit selection
-
-/interactable triggers <trigger name> set_area <pos1: x,y,z> <pos2: x,y,z>
-# Sets a trigger's area to the specified 2 coordinates
-
-/interactable triggers <trigger name> rename <name>
-# Renames a trigger to <name>
-
-/interactable triggers <trigger name> remove
-# Removes the trigger
-
-/interactable triggers <trigger name> info
-# Displays admin information about the trigger
-
-/interactable triggers <trigger name> data
-# Displays the trigger data
-
-/interactable triggers <trigger name> data view [<path: nbt path>]
-# Displays trigger data, if [path] is set, shows only
-# data at that path
-
-/interactable triggers <trigger name> data insert <path: nbt path> <tag>
-# Inserts a <tag> into trigger data at a <path>
-
-/interactable triggers <trigger name> data merge <tag>
-# Merges a <tag> into trigger data
-
-/interactable triggers <trigger name> data set <tag>
-# Completely overwrites the existing trigger data
-# and sets it to <tag>
-
-/interactable triggers <trigger name> actions
-# Lists all actions a trigger has
-
-/interactable triggers <trigger name> actions clear
-# Clears all actions in a trigger
-
-/interactable triggers <trigger name> actions add <action type> [<action value>]
-# Adds a <action type> to a trigger
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable triggers <trigger name> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a trigger's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable triggers <trigger name> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a trigger at an <index>
-
-/interactable triggers <trigger name> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/interactable triggers <trigger name> tests silent
-# Shows if the Usage checks of trigger will show fail messages
-
-/interactable triggers <trigger name> tests silent <true | false>
-# Sets if trigger will show fail messages or not
-
-/interactable triggers <trigger name> tests
-# Lists all tests a trigger has
-
-/interactable triggers <trigger name> tests clear
-# Clears all tests in a trigger
-
-/interactable triggers <trigger name> tests add <test type> [<test value>]
-# Adds a <test type> to a trigger
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable triggers <trigger name> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a trigger's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable triggers <trigger name> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a trigger at an <index>
-
-/interactable triggers <trigger name> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-
-/interactable block -create <position: x,y,z>
-# Creates a new usable
-
-/interactable block <position: x,y,z> remove
-# Removes the block
-
-/interactable block <position: x,y,z> info
-# Displays admin information about the block
-
-/interactable block <position: x,y,z> data
-# Displays the block data
-
-/interactable block <position: x,y,z> data view [<path: nbt path>]
-# Displays block data, if [path] is set, shows only
-# data at that path
-
-/interactable block <position: x,y,z> data insert <path: nbt path> <tag>
-# Inserts a <tag> into block data at a <path>
-
-/interactable block <position: x,y,z> data merge <tag>
-# Merges a <tag> into block data
-
-/interactable block <position: x,y,z> data set <tag>
-# Completely overwrites the existing block data
-# and sets it to <tag>
-
-/interactable block <position: x,y,z> actions
-# Lists all actions a block has
-
-/interactable block <position: x,y,z> actions clear
-# Clears all actions in a block
-
-/interactable block <position: x,y,z> actions add <action type> [<action value>]
-# Adds a <action type> to a block
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable block <position: x,y,z> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a block's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable block <position: x,y,z> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a block at an <index>
-
-/interactable block <position: x,y,z> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/interactable block <position: x,y,z> tests silent
-# Shows if the Usage checks of block will show fail messages
-
-/interactable block <position: x,y,z> tests silent <true | false>
-# Sets if block will show fail messages or not
-
-/interactable block <position: x,y,z> tests
-# Lists all tests a block has
-
-/interactable block <position: x,y,z> tests clear
-# Clears all tests in a block
-
-/interactable block <position: x,y,z> tests add <test type> [<test value>]
-# Adds a <test type> to a block
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable block <position: x,y,z> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a block's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable block <position: x,y,z> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a block at an <index>
-
-/interactable block <position: x,y,z> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-
-/interactable entity -create <entity: selector>
-# Creates a new usable
-
-/interactable entity <entity: selector> remove
-# Removes the entity
-
-/interactable entity <entity: selector> info
-# Displays admin information about the entity
-
-/interactable entity <entity: selector> data
-# Displays the entity data
-
-/interactable entity <entity: selector> data view [<path: nbt path>]
-# Displays entity data, if [path] is set, shows only
-# data at that path
-
-/interactable entity <entity: selector> data insert <path: nbt path> <tag>
-# Inserts a <tag> into entity data at a <path>
-
-/interactable entity <entity: selector> data merge <tag>
-# Merges a <tag> into entity data
-
-/interactable entity <entity: selector> data set <tag>
-# Completely overwrites the existing entity data
-# and sets it to <tag>
-
-/interactable entity <entity: selector> actions
-# Lists all actions a entity has
-
-/interactable entity <entity: selector> actions clear
-# Clears all actions in a entity
-
-/interactable entity <entity: selector> actions add <action type> [<action value>]
-# Adds a <action type> to a entity
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable entity <entity: selector> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a entity's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/interactable entity <entity: selector> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a entity at an <index>
-
-/interactable entity <entity: selector> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/interactable entity <entity: selector> tests silent
-# Shows if the Usage checks of entity will show fail messages
-
-/interactable entity <entity: selector> tests silent <true | false>
-# Sets if entity will show fail messages or not
-
-/interactable entity <entity: selector> tests
-# Lists all tests a entity has
-
-/interactable entity <entity: selector> tests clear
-# Clears all tests in a entity
-
-/interactable entity <entity: selector> tests add <test type> [<test value>]
-# Adds a <test type> to a entity
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable entity <entity: selector> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a entity's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/interactable entity <entity: selector> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a entity at an <index>
-
-/interactable entity <entity: selector> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
-
-## /kit <a name="commands_usables_UseCmdCommand$KitCommand"></a>
-Obtains the specified kit or views all available kits.  
-  
-**Command metadata**:  
-Permission: `ftc.commands.kit`  
-### Usages
-```yaml
-/kit
-# Lists all kits
-
-/kit create <name>
-# Creates a new kit
-
-/kit <kit>
-# Uses a <kit>
-
-/kit <kit> <user>
-# Makes a <user> use a <kit>
-
-/kit <kit> remove
-# Removes a <kit>
-
-/kit <kit> edit items
-# Sets the items of a <kit> to the items in your inventory
-
-/kit <kit> edit items list
-# Lists all the items in a <kit>
-
-/kit <kit> edit items add
-# Adds the item you're holding to a <kit>
-
-/kit <kit> edit items add <item> <amount: number(1..64)>
-# Adds an <item> to a <kit>
-
-/kit <kit> edit items remove <index: number(1..)>
-# Removes an item at <index> from a <kit>
-
-/kit <kit> edit tests silent
-# Shows if the Usage checks of kit will show fail messages
-
-/kit <kit> edit tests silent <true | false>
-# Sets if kit will show fail messages or not
-
-/kit <kit> edit tests
-# Lists all tests a kit has
-
-/kit <kit> edit tests clear
-# Clears all tests in a kit
-
-/kit <kit> edit tests add <test type> [<test value>]
-# Adds a <test type> to a kit
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/kit <kit> edit tests add -first <test type> [<test value>]
-# Inserts a <test type> to a kit's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/kit <kit> edit tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a kit at an <index>
-
-/kit <kit> edit tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
-
-## /usable_block <a name="commands_usables_UsableBlockNode"></a>
+**Permission**: `ftc.usables`  
+**Aliases**: `interactable`, `usables`  
+**Uses**:
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; use</pre>  
+  Makes you use a block  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a block  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable block &lt;block: x,y,z&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; use</pre>  
+  Makes you use a entity  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a entity  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable entity &lt;entity: uuid | @selector&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+- <pre class="command-usage-arguments">/usable item info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable item use</pre>  
+  Makes you use a item  
+- <pre class="command-usage-arguments">/usable item use &lt;players&gt;</pre>  
+  Makes a list of players use a item  
+- <pre class="command-usage-arguments">/usable item data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable item data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable item data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable item data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable item data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable item silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable item silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable item actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable item actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable item actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable item actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable item actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable item actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable item actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable item tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable item tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable item tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable item tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable item tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable item tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable item tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+- <pre class="command-usage-arguments">/usable triggers create &lt;name&gt;</pre>  
+  Defines a new trigger, using your world edit  
+  selection as the trigger's area  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; rename &lt;trigger name&gt; &lt;new name&gt;</pre>  
+  Renames a trigger to name  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; redefine &lt;trigger name&gt;</pre>  
+  Redefines a trigger to your current world edit selection  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; remove</pre>  
+  Removes a trigger  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; use</pre>  
+  Makes you use a triggers  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a triggers  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable triggers &lt;trigger&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+- <pre class="command-usage-arguments">/usable kit</pre>  
+  Displays a list of Kits  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt;</pre>  
+  Uses a Kit  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable kit &lt;kit&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+- <pre class="command-usage-arguments">/usable warp</pre>  
+  Displays a list of Warps  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; destination</pre>  
+  Displays a warp's current destination location  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; destination set</pre>  
+  Sets a warp's destination to where you're standing  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; destination set &lt;pos: x,y,z&gt;</pre>  
+  Sets a warp's position to the given xyz coordinates  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; instant</pre>  
+  Shows if a warp will always instantly teleport players or not  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; instant &lt;true | false&gt;</pre>  
+  Sets if a warp will always instantly teleport players or not  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt;</pre>  
+  Uses a Warp  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usable warp &lt;warp&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
+
+## /usableblock
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.usables`  
-### Usages
-```yaml
-/usable_block -create <position: x,y,z>
-# Creates a new usable
+**Permission**: `ftc.usables.block`  
+**Aliases**: `usable_block`  
+**Uses**:
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; use</pre>  
+  Makes you use a block  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a block  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usableblock &lt;block: x,y,z&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
-/usable_block <position: x,y,z> remove
-# Removes the block
-
-/usable_block <position: x,y,z> info
-# Displays admin information about the block
-
-/usable_block <position: x,y,z> data
-# Displays the block data
-
-/usable_block <position: x,y,z> data view [<path: nbt path>]
-# Displays block data, if [path] is set, shows only
-# data at that path
-
-/usable_block <position: x,y,z> data insert <path: nbt path> <tag>
-# Inserts a <tag> into block data at a <path>
-
-/usable_block <position: x,y,z> data merge <tag>
-# Merges a <tag> into block data
-
-/usable_block <position: x,y,z> data set <tag>
-# Completely overwrites the existing block data
-# and sets it to <tag>
-
-/usable_block <position: x,y,z> actions
-# Lists all actions a block has
-
-/usable_block <position: x,y,z> actions clear
-# Clears all actions in a block
-
-/usable_block <position: x,y,z> actions add <action type> [<action value>]
-# Adds a <action type> to a block
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/usable_block <position: x,y,z> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a block's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/usable_block <position: x,y,z> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a block at an <index>
-
-/usable_block <position: x,y,z> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/usable_block <position: x,y,z> tests silent
-# Shows if the Usage checks of block will show fail messages
-
-/usable_block <position: x,y,z> tests silent <true | false>
-# Sets if block will show fail messages or not
-
-/usable_block <position: x,y,z> tests
-# Lists all tests a block has
-
-/usable_block <position: x,y,z> tests clear
-# Clears all tests in a block
-
-/usable_block <position: x,y,z> tests add <test type> [<test value>]
-# Adds a <test type> to a block
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/usable_block <position: x,y,z> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a block's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/usable_block <position: x,y,z> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a block at an <index>
-
-/usable_block <position: x,y,z> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
-
-## /usable_entity <a name="commands_usables_UsableEntityNode"></a>
+## /usableentity
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.usables`  
-### Usages
-```yaml
-/usable_entity -create <entity: selector>
-# Creates a new usable
+**Permission**: `ftc.usables.entity`  
+**Aliases**: `usable_entity`  
+**Uses**:
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; use</pre>  
+  Makes you use a entity  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a entity  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usableentity &lt;entity: uuid | @selector&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
-/usable_entity <entity: selector> remove
-# Removes the entity
-
-/usable_entity <entity: selector> info
-# Displays admin information about the entity
-
-/usable_entity <entity: selector> data
-# Displays the entity data
-
-/usable_entity <entity: selector> data view [<path: nbt path>]
-# Displays entity data, if [path] is set, shows only
-# data at that path
-
-/usable_entity <entity: selector> data insert <path: nbt path> <tag>
-# Inserts a <tag> into entity data at a <path>
-
-/usable_entity <entity: selector> data merge <tag>
-# Merges a <tag> into entity data
-
-/usable_entity <entity: selector> data set <tag>
-# Completely overwrites the existing entity data
-# and sets it to <tag>
-
-/usable_entity <entity: selector> actions
-# Lists all actions a entity has
-
-/usable_entity <entity: selector> actions clear
-# Clears all actions in a entity
-
-/usable_entity <entity: selector> actions add <action type> [<action value>]
-# Adds a <action type> to a entity
-# <action value> allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/usable_entity <entity: selector> actions add -first <action type> [<action value>]
-# Inserts a <action type> to a entity's action list's first place
-# [<action value>] allows you to specify data for the <action type>
-# to use. The format of data required here, is determined
-# by the <action type>
-
-/usable_entity <entity: selector> actions remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a action value from a entity at an <index>
-
-/usable_entity <entity: selector> actions remove -between <start index> <end index>
-# Removes all action values between the <start index>
-# and <end index>
-
-/usable_entity <entity: selector> tests silent
-# Shows if the Usage checks of entity will show fail messages
-
-/usable_entity <entity: selector> tests silent <true | false>
-# Sets if entity will show fail messages or not
-
-/usable_entity <entity: selector> tests
-# Lists all tests a entity has
-
-/usable_entity <entity: selector> tests clear
-# Clears all tests in a entity
-
-/usable_entity <entity: selector> tests add <test type> [<test value>]
-# Adds a <test type> to a entity
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/usable_entity <entity: selector> tests add -first <test type> [<test value>]
-# Inserts a <test type> to a entity's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/usable_entity <entity: selector> tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a entity at an <index>
-
-/usable_entity <entity: selector> tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
-
-## /warp <a name="commands_usables_UseCmdCommand$WarpCommand"></a>
-List all warps or warp to the specified location.  
+## /usableitem
+An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.commands.warp`  
-### Usages
-```yaml
-/warp
-# Lists all warps
+**Permission**: `ftc.usables.item`  
+**Aliases**: `usable_item`  
+**Uses**:
+- <pre class="command-usage-arguments">/usableitem info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usableitem use</pre>  
+  Makes you use a item  
+- <pre class="command-usage-arguments">/usableitem use &lt;players&gt;</pre>  
+  Makes a list of players use a item  
+- <pre class="command-usage-arguments">/usableitem data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usableitem data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usableitem data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usableitem data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usableitem data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usableitem silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usableitem silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usableitem actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usableitem actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usableitem actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableitem actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usableitem actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usableitem actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usableitem actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usableitem tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usableitem tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usableitem tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usableitem tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usableitem tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usableitem tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usableitem tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
-/warp create <name>
-# Creates a new warp
-# By default, the warp will require players to
-# have the permission 'ftc.warps.<warp name>
+## /usabletriggers
+An FTC command (default description)  
+  
+**Permission**: `ftc.usables.trigger`  
+**Aliases**: `usable_triggers`, `triggers`  
+**Uses**:
+- <pre class="command-usage-arguments">/usabletriggers create &lt;name&gt;</pre>  
+  Defines a new trigger, using your world edit  
+  selection as the trigger's area  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; rename &lt;trigger name&gt; &lt;new name&gt;</pre>  
+  Renames a trigger to name  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; redefine &lt;trigger name&gt;</pre>  
+  Redefines a trigger to your current world edit selection  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; remove</pre>  
+  Removes a trigger  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; use</pre>  
+  Makes you use a triggers  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; use &lt;players&gt;</pre>  
+  Makes a list of players use a triggers  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/usabletriggers &lt;trigger&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
-/warp <warp>
-# Uses a <warp>
-
-/warp <warp> <user>
-# Makes a <user> use a <warp>
-
-/warp <warp> remove
-# Removes a <warp>
-
-/warp <warp> edit destination
-# Sets a <warp>'s destination to where you're standing
-
-/warp <warp> edit destination [world=<world>] [pos=<x,y,z>] [yaw=<number>] [pitch=<pitch>]
-# Sets the destination to the given options
-
-/warp <warp> edit tests silent
-# Shows if the Usage checks of warp will show fail messages
-
-/warp <warp> edit tests silent <true | false>
-# Sets if warp will show fail messages or not
-
-/warp <warp> edit tests
-# Lists all tests a warp has
-
-/warp <warp> edit tests clear
-# Clears all tests in a warp
-
-/warp <warp> edit tests add <test type> [<test value>]
-# Adds a <test type> to a warp
-# <test value> allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/warp <warp> edit tests add -first <test type> [<test value>]
-# Inserts a <test type> to a warp's test list's first place
-# [<test value>] allows you to specify data for the <test type>
-# to use. The format of data required here, is determined
-# by the <test type>
-
-/warp <warp> edit tests remove <index: number(1..)> [-at <index: number(1..)>]
-# Removes a test value from a warp at an <index>
-
-/warp <warp> edit tests remove -between <start index> <end index>
-# Removes all test values between the <start index>
-# and <end index>
-```
+## /warp
+An FTC command (default description)  
+  
+**Permission**: `ftc.warps`  
+**Aliases**: `warps`  
+**Uses**:
+- <pre class="command-usage-arguments">/warp</pre>  
+  Displays a list of Warps  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; destination</pre>  
+  Displays a warp's current destination location  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; destination set</pre>  
+  Sets a warp's destination to where you're standing  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; destination set &lt;pos: x,y,z&gt;</pre>  
+  Sets a warp's position to the given xyz coordinates  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; instant</pre>  
+  Shows if a warp will always instantly teleport players or not  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; instant &lt;true | false&gt;</pre>  
+  Sets if a warp will always instantly teleport players or not  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt;</pre>  
+  Uses a Warp  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; info</pre>  
+  Shows general info  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; data</pre>  
+  Displays the Usable data  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Usable data, if [path] is set, shows only  
+  data at that path  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Usable data at a path  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; data merge &lt;tag&gt;</pre>  
+  Merges a tag into Usable data  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Usable data  
+  and sets it to tag  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; silent</pre>  
+  Checks if a usable is silent  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; silent &lt;true | false&gt;</pre>  
+  Sets a usable to be silent or not  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions</pre>  
+  Shows all the existing Actions  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions clear</pre>  
+  Clears the Action list  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions remove &lt;indices&gt;</pre>  
+  Removes a Action  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Action before the element at index  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Action to the front of the Actions list  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; actions set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Action at index to type  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests</pre>  
+  Shows all the existing Conditions  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests clear</pre>  
+  Clears the Condition list  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests remove &lt;indices&gt;</pre>  
+  Removes a Condition  
+  Examples:  
+  - remove 1: Removes an element at index 1  
+  - remove 1..3: Removes all elements between indices 1 through 3  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests add &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests add -at &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds an Condition before the element at index  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests add -first &lt;type&gt; [&lt;input&gt;]</pre>  
+  Adds a Condition to the front of the Conditions list  
+- <pre class="command-usage-arguments">/warp &lt;warp&gt; tests set &lt;index&gt; &lt;type&gt; [&lt;input&gt;]</pre>  
+  Sets the Condition at index to type  
 
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Thu Mar 30 22:08:46 CEST 2023`  
-Plugin version: `1.19.4-1733-RELEASE`  
-Total commands: 6
+Date: `Sat Nov 18 17:32:09 EET 2023`  
+Plugin version: `1.0.0-SNAPSHOT`  
+Total commands: 7

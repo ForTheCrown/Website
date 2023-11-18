@@ -1,257 +1,206 @@
 ---
-title: "Item"
-linkTitle: "Item"
+title: "item"
+linkTitle: "item"
 type: docs
 weight: 1
 description: >
-  Item Commands
+  item commands
 ---
 
-# Table of Contents
-- [/enchant](#commands_item_EnchantmentNode)
-- [/item_attribute_modifiers](#commands_item_ItemAttributeNode)
-- [/item_cooldown](#commands_item_ItemCooldownNode)
-- [/item_data](#commands_item_ItemDataNode)
-- [/itemname](#commands_item_ItemNameNode)
-- [/items](#commands_item_ItemModCommands$ItemStacksCommand)
-- [/lore](#commands_item_ItemLoreNode)
 
-# Commands
-## /enchant <a name="commands_item_EnchantmentNode"></a>
+## /enchant
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-### Usages
-```yaml
-/enchant <enchantment> [<level: number(1..)>]
-# Applies the <enchantment> to your held item
-# with [level]. If [level] is not given, then
-# a level of 1 is used.
-# If the item is a book, enchanting it turns it
-# into an enchanted book
+**Permission**: `ftc.commands.items`  
+**Uses**:
+- <pre class="command-usage-arguments">/enchant &lt;enchantment&gt; [&lt;level: number(1..)&gt;]</pre>  
+  Applies the enchantment to your held item  
+  with [level]. If [level] is not given, then  
+  a level of 1 is used.  
+  If the item is a book, enchanting it turns it  
+  into an enchanted book  
+- <pre class="command-usage-arguments">/enchant clear</pre>  
+  Clears all your held item's enchantments  
 
-/enchant clear
-# Clears all your held item's enchantments
-```
-
-## /item_attribute_modifiers <a name="commands_item_ItemAttributeNode"></a>
+## /item_attribute_modifiers
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-### Usages
-```yaml
-/item_attribute_modifiers clear
-# Clears the item's Attribute Modifiers
+**Permission**: `ftc.commands.items`  
+**Uses**:
+- <pre class="command-usage-arguments">/item_attribute_modifiers clear</pre>  
+  Clears the item's Attribute Modifiers  
+- <pre class="command-usage-arguments">/item_attribute_modifiers remove &lt;attribute&gt;</pre>  
+  Removes all modifiers which modify the  
+  attribute value  
+- <pre class="command-usage-arguments">/item_attribute_modifiers remove attr &lt;attribute&gt;</pre>  
+  Same as above  
+- <pre class="command-usage-arguments">/item_attribute_modifiers remove slot &lt;equipment slot&gt;</pre>  
+  Removes all modifiers which apply to the  
+  equipment slot  
 
-/item_attribute_modifiers remove <attribute>
-# Removes all modifiers which modify the
-# <attribute> value
-
-/item_attribute_modifiers remove attr <attribute>
-# Same as above
-
-/item_attribute_modifiers remove slot <equipment slot>
-# Removes all modifiers which apply to the
-# <equipment slot>
-```
-
-## /item_cooldown <a name="commands_item_ItemCooldownNode"></a>
+## /item_cooldown
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `itemcooldown`  
-### Usages
-```yaml
-/item_cooldown <material>
-# Shows how long a <material> is on cooldown for you
+**Permission**: `ftc.commands.items`  
+**Aliases**: `itemcooldown`  
+**Uses**:
+- <pre class="command-usage-arguments">/item_cooldown &lt;material&gt;</pre>  
+  Shows how long a material is on cooldown for you  
+- <pre class="command-usage-arguments">/item_cooldown &lt;material&gt; &lt;time&gt;</pre>  
+  Sets your material's cooldown to time  
 
-/item_cooldown <material> <time>
-# Sets your <material>'s cooldown to <time>
-```
-
-## /item_data <a name="commands_item_ItemDataNode"></a>
+## /item_data
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `item_tags`, `itemnbt`, `itemdata`, `itemtags`  
-### Usages
-```yaml
-/item_data
-# Displays the Item data
+**Permission**: `ftc.commands.items`  
+**Aliases**: `item_tags`, `itemnbt`, `itemdata`, `itemtags`  
+**Uses**:
+- <pre class="command-usage-arguments">/item_data give_command</pre>  
+  Creates a `/give` command for the item you're holding  
+- <pre class="command-usage-arguments">/item_data</pre>  
+  Displays the Item data  
+- <pre class="command-usage-arguments">/item_data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Item data, if [path] is set, shows only  
+  data at that path  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/item_data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Item data at a path  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/item_data merge &lt;tag&gt;</pre>  
+  Merges a tag into Item data  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/item_data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Item data  
+  and sets it to tag  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
 
-/item_data view [<path: nbt path>]
-# Displays Item data, if [path] is set, shows only
-# data at that path
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data insert <path: nbt path> <tag>
-# Inserts a <tag> into Item data at a <path>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data merge <tag>
-# Merges a <tag> into Item data
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/item_data set <tag>
-# Completely overwrites the existing Item data
-# and sets it to <tag>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-```
-
-## /itemname <a name="commands_item_ItemNameNode"></a>
+## /itemname
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `nameitem`, `renameitem`, `itemrename`  
-### Usages
-```yaml
-/itemname <text>
-# Sets the name of the item you're holding
-# Note:
-# If the <text> is a JSON component (eg: {"text":"Item Name"})
-# The name won't automatically become non-italic
-# and white, you'll be required to manually set them to
-# that configuration
+**Permission**: `ftc.commands.items`  
+**Aliases**: `nameitem`, `renameitem`, `itemrename`  
+**Uses**:
+- <pre class="command-usage-arguments">/itemname &lt;text&gt;</pre>  
+  Sets the name of the item you're holding  
+  Note:  
+  If the text is a JSON component (eg: {"text":"Item Name"})  
+  The name won't automatically become non-italic  
+  and white, you'll be required to manually set them to  
+  that configuration  
+- <pre class="command-usage-arguments">/itemname -clear</pre>  
+  Clears the name of the item you're holding  
 
-/itemname -clear
-# Clears the name of the item you're holding
-```
-
-## /items <a name="commands_item_ItemModCommands$ItemStacksCommand"></a>
+## /items
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `itemstacks`, `itemstack`, `item`  
-### Usages
-```yaml
-/items enchant <enchantment> [<level: number(1..)>]
-# Applies the <enchantment> to your held item
-# with [level]. If [level] is not given, then
-# a level of 1 is used.
-# If the item is a book, enchanting it turns it
-# into an enchanted book
+**Permission**: `ftc.commands.items`  
+**Aliases**: `itemstacks`, `itemstack`, `item`  
+**Uses**:
+- <pre class="command-usage-arguments">/items enchant &lt;enchantment&gt; [&lt;level: number(1..)&gt;]</pre>  
+  Applies the enchantment to your held item  
+  with [level]. If [level] is not given, then  
+  a level of 1 is used.  
+  If the item is a book, enchanting it turns it  
+  into an enchanted book  
+- <pre class="command-usage-arguments">/items enchant clear</pre>  
+  Clears all your held item's enchantments  
+- <pre class="command-usage-arguments">/items lore clear</pre>  
+  Clears your held item's lore  
+- <pre class="command-usage-arguments">/items lore add &lt;text&gt;</pre>  
+  Adds text to your held item's lore  
+  Note:  
+  If the text is a JSON component (eg: {"text":"Item Name"})  
+  The name won't automatically become non-italic  
+  and white, you'll be required to manually set them to  
+  that configuration  
+- <pre class="command-usage-arguments">/items lore display</pre>  
+  Displays the lore of the item you're holding with index numbers  
+- <pre class="command-usage-arguments">/items lore set &lt;index&gt; &lt;text&gt;</pre>  
+  Sets the lore on the specified line of the item you're holding  
+- <pre class="command-usage-arguments">/items lore remove &lt;index&gt;</pre>  
+  Removes the lore on the given line  
+- <pre class="command-usage-arguments">/items lore remove at &lt;index&gt;</pre>  
+  Removes the lore on the given line  
+- <pre class="command-usage-arguments">/items lore remove between &lt;start index&gt; &lt;end index&gt;</pre>  
+  Removes all lore between the 2 lines  
+- <pre class="command-usage-arguments">/items name &lt;text&gt;</pre>  
+  Sets the name of the item you're holding  
+  Note:  
+  If the text is a JSON component (eg: {"text":"Item Name"})  
+  The name won't automatically become non-italic  
+  and white, you'll be required to manually set them to  
+  that configuration  
+- <pre class="command-usage-arguments">/items name -clear</pre>  
+  Clears the name of the item you're holding  
+- <pre class="command-usage-arguments">/items data give_command</pre>  
+  Creates a `/give` command for the item you're holding  
+- <pre class="command-usage-arguments">/items data</pre>  
+  Displays the Item data  
+- <pre class="command-usage-arguments">/items data view [&lt;path: nbt path&gt;]</pre>  
+  Displays Item data, if [path] is set, shows only  
+  data at that path  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/items data insert &lt;path: nbt path&gt; &lt;tag&gt;</pre>  
+  Inserts a tag into Item data at a path  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/items data merge &lt;tag&gt;</pre>  
+  Merges a tag into Item data  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/items data set &lt;tag&gt;</pre>  
+  Completely overwrites the existing Item data  
+  and sets it to tag  
+  Note: the tag and path roots are the item's raw NBT  
+  Not the 'tag' element.  
+- <pre class="command-usage-arguments">/items attributes clear</pre>  
+  Clears the item's Attribute Modifiers  
+- <pre class="command-usage-arguments">/items attributes remove &lt;attribute&gt;</pre>  
+  Removes all modifiers which modify the  
+  attribute value  
+- <pre class="command-usage-arguments">/items attributes remove attr &lt;attribute&gt;</pre>  
+  Same as above  
+- <pre class="command-usage-arguments">/items attributes remove slot &lt;equipment slot&gt;</pre>  
+  Removes all modifiers which apply to the  
+  equipment slot  
+- <pre class="command-usage-arguments">/items cooldown &lt;material&gt;</pre>  
+  Shows how long a material is on cooldown for you  
+- <pre class="command-usage-arguments">/items cooldown &lt;material&gt; &lt;time&gt;</pre>  
+  Sets your material's cooldown to time  
 
-/items enchant clear
-# Clears all your held item's enchantments
-
-/items lore clear
-# Clears your held item's lore
-
-/items lore add <text>
-# Adds <text> to your held item's lore
-# Note:
-# If the <text> is a JSON component (eg: {"text":"Item Name"})
-# The name won't automatically become non-italic
-# and white, you'll be required to manually set them to
-# that configuration
-
-/items lore remove <index>
-# Removes the lore on the given line
-
-/items lore remove at <index>
-# Removes the lore on the given line
-
-/items lore remove between <start index> <end index>
-# Removes all lore between the 2 lines
-
-/items name <text>
-# Sets the name of the item you're holding
-# Note:
-# If the <text> is a JSON component (eg: {"text":"Item Name"})
-# The name won't automatically become non-italic
-# and white, you'll be required to manually set them to
-# that configuration
-
-/items name -clear
-# Clears the name of the item you're holding
-
-/items data
-# Displays the Item data
-
-/items data view [<path: nbt path>]
-# Displays Item data, if [path] is set, shows only
-# data at that path
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/items data insert <path: nbt path> <tag>
-# Inserts a <tag> into Item data at a <path>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/items data merge <tag>
-# Merges a <tag> into Item data
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/items data set <tag>
-# Completely overwrites the existing Item data
-# and sets it to <tag>
-# Note: the <tag> and <path> roots are the item's raw NBT
-# Not the 'tag' element.
-
-/items attributes clear
-# Clears the item's Attribute Modifiers
-
-/items attributes remove <attribute>
-# Removes all modifiers which modify the
-# <attribute> value
-
-/items attributes remove attr <attribute>
-# Same as above
-
-/items attributes remove slot <equipment slot>
-# Removes all modifiers which apply to the
-# <equipment slot>
-
-/items cooldown <material>
-# Shows how long a <material> is on cooldown for you
-
-/items cooldown <material> <time>
-# Sets your <material>'s cooldown to <time>
-```
-
-## /lore <a name="commands_item_ItemLoreNode"></a>
+## /lore
 An FTC command (default description)  
   
-**Command metadata**:  
-Permission: `ftc.admin`  
-Aliases: `itemlore`, `lores`, `itemlores`  
-### Usages
-```yaml
-/lore clear
-# Clears your held item's lore
-
-/lore add <text>
-# Adds <text> to your held item's lore
-# Note:
-# If the <text> is a JSON component (eg: {"text":"Item Name"})
-# The name won't automatically become non-italic
-# and white, you'll be required to manually set them to
-# that configuration
-
-/lore remove <index>
-# Removes the lore on the given line
-
-/lore remove at <index>
-# Removes the lore on the given line
-
-/lore remove between <start index> <end index>
-# Removes all lore between the 2 lines
-```
+**Permission**: `ftc.commands.items`  
+**Aliases**: `itemlore`, `lores`, `itemlores`  
+**Uses**:
+- <pre class="command-usage-arguments">/lore clear</pre>  
+  Clears your held item's lore  
+- <pre class="command-usage-arguments">/lore add &lt;text&gt;</pre>  
+  Adds text to your held item's lore  
+  Note:  
+  If the text is a JSON component (eg: {"text":"Item Name"})  
+  The name won't automatically become non-italic  
+  and white, you'll be required to manually set them to  
+  that configuration  
+- <pre class="command-usage-arguments">/lore display</pre>  
+  Displays the lore of the item you're holding with index numbers  
+- <pre class="command-usage-arguments">/lore set &lt;index&gt; &lt;text&gt;</pre>  
+  Sets the lore on the specified line of the item you're holding  
+- <pre class="command-usage-arguments">/lore remove &lt;index&gt;</pre>  
+  Removes the lore on the given line  
+- <pre class="command-usage-arguments">/lore remove at &lt;index&gt;</pre>  
+  Removes the lore on the given line  
+- <pre class="command-usage-arguments">/lore remove between &lt;start index&gt; &lt;end index&gt;</pre>  
+  Removes all lore between the 2 lines  
 
 # Metadata
 This is an auto-generated command documentation file generated by the FTC plugin.  
-Date: `Thu Mar 30 22:08:46 CEST 2023`  
-Plugin version: `1.19.4-1733-RELEASE`  
+Date: `Sat Nov 18 17:32:09 EET 2023`  
+Plugin version: `1.0.0-SNAPSHOT`  
 Total commands: 7
